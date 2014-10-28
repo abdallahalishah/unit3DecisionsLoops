@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class FindFirstMatch
+{
+    /**
+     * Computes the index of the first space (' ') in the specified string.
+     */
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String str = scan.nextLine();
+        
+        boolean found = false;
+        int index = 0;
+        
+        while (!found && index < str.length() )
+        {
+            char ch = str.charAt(index);
+            if (ch == ' ')
+            {
+                found = true;
+            }
+            else
+            {
+                index++;
+            }
+        }
+        
+        if (found)
+        {
+            System.out.println("Index of first space: " + index);
+        }
+        else 
+        {
+            System.out.println("Space not found :(");
+        }
+    }
+
+}
