@@ -4,6 +4,7 @@ import info.gridworld.actor.Rock;
 import info.gridworld.grid.Grid;
 import info.gridworld.grid.BoundedGrid;
 import info.gridworld.grid.Location;
+import java.util.ArrayList;
 
 /**
  * Game of Life starter code. Demonstrates how to create and populate the game using the GridWorld framework.
@@ -98,7 +99,7 @@ public class GameOfLife
      * @post    the world has been populated with a new grid containing the next generation
      * 
      */
-    private void createNextGeneration()
+    public void createNextGeneration()
     {
         /** You will need to read the documentation for the World, Grid, and Location classes
          *      in order to implement the Game of Life algorithm and leverage the GridWorld framework.
@@ -109,6 +110,31 @@ public class GameOfLife
         
         // insert magic here...
         
+        for (int row = 0; row < ROWS; row++)
+        {
+            for (int col = 0; col < COLS; col++)
+            {
+                Actor cell = getActor(row, col);
+                Location locNew = new Location(row, col);
+                int counter = 0;
+                
+                if (cell != null)
+                {
+                    ArrayList<Actor> neighborList = grid.getNeighbors(locNew);
+                    
+                    for (int index = 0; index < neighborList.size(); index++)
+                    {
+                        if (neighborList.get(index) != null)
+                        {
+                            counter += 1;
+                        }
+                    }
+                }   
+                
+                
+                
+            }
+        }
     }
     
     /**
