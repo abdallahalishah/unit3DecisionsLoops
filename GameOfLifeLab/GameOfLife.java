@@ -109,30 +109,55 @@ public class GameOfLife
         Grid<Actor> grid = world.getGrid();
         
         // insert magic here...
-        
-        for (int row = 0; row < ROWS; row++)
+        for (int i = 0; i < 3; i++)
         {
-            for (int col = 0; col < COLS; col++)
+            for (int row = 0; row < ROWS; row++)
             {
-                Actor cell = getActor(row, col);
-                Location locNew = new Location(row, col);
-                int counter = 0;
-                
-                if (cell != null)
+                for (int col = 0; col < COLS; col++)
                 {
-                    ArrayList<Actor> neighborList = grid.getNeighbors(locNew);
-                    
-                    for (int index = 0; index < neighborList.size(); index++)
+                    Actor cell = getActor(row, col);
+                    Location locNew = new Location(row, col);
+                    int countAlive = 0;
+                    int countDead = 0;
+                    if (cell != null)
                     {
-                        if (neighborList.get(index) != null)
+                        ArrayList<Actor> neighborList = grid.getNeighbors(locNew);
+                        
+                        for (int index = 0; index < neighborList.size(); index++)
                         {
-                            counter += 1;
+                            if (neighborList.get(index) != null)
+                            {
+                                countAlive += 1;                            
+                            }
                         }
+                        if (countAlive == 3 || countAlive == 2)
+                        {
+                            Rock rock = new Rock();
+                            grid.put(locNew, rock);
+                        }
+                        
+                    }   
+                    else
+                    {
+                        ArrayList<Actor> neighborList = grid.getNeighbors(locNew);
+                        
+                        for (int index = 0; index < neighborList.size(); index++)
+                        {
+                            if (neighborList.get(index) != null)
+                            {
+                                countDead += 1;
+                            }
+                        }
+                        if (countDead == 3)
+                        {
+                            Rock rock = new Rock();
+                            grid.put(locNew, rock);
+                        }
+                        
                     }
-                }   
-                
-                
-                
+                    
+                    
+                }
             }
         }
     }
