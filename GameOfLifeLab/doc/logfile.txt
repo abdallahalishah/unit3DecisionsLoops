@@ -1,0 +1,47 @@
+Class documentation
+<---- javadoc command: ---->
+/Users/shahsboyz/Documents/BlueJ 3.1.4/BlueJ.app/Contents/Frameworks/jdk.framework/Versions/A/Contents/Home/bin/javadoc
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.8
+-classpath
+/Users/shahsboyz/Documents/BlueJ 3.1.4/BlueJ.app/Contents/Resources/Java/bluejcore.jar:/Users/shahsboyz/Documents/BlueJ 3.1.4/BlueJ.app/Contents/Resources/Java/junit-4.8.2.jar:/Users/shahsboyz/Documents/GridWorldCode/gridworld.jar:/Users/shahsboyz/Documents/BlueJ 3.1.4/BlueJ.app/Contents/Resources/Java/userlib/pi4j-core.jar:/Users/shahsboyz/Documents/BlueJ 3.1.4/BlueJ.app/Contents/Resources/Java/userlib/pi4j-device.jar:/Users/shahsboyz/Documents/BlueJ 3.1.4/BlueJ.app/Contents/Resources/Java/userlib/pi4j-gpio-extension.jar:/Users/shahsboyz/Documents/BlueJ 3.1.4/BlueJ.app/Contents/Resources/Java/userlib/pi4j-service.jar:/Users/shahsboyz/Desktop/GameOfLifeLab
+-d
+/Users/shahsboyz/Desktop/GameOfLifeLab/doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-docletpath
+/Users/shahsboyz/Documents/BlueJ 3.1.4/BlueJ.app/Contents/Resources/Java/bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+/Users/shahsboyz/Desktop/GameOfLifeLab/GameOfLife.java
+<---- end of javadoc command ---->
+Loading source file /Users/shahsboyz/Desktop/GameOfLifeLab/GameOfLife.java...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_20
+Building tree for all the packages and classes...
+Generating /Users/shahsboyz/Desktop/GameOfLifeLab/doc/GameOfLife.html...
+/Users/shahsboyz/Desktop/GameOfLifeLab/GameOfLife.java:39: warning - @post is an unknown tag.
+/Users/shahsboyz/Desktop/GameOfLifeLab/GameOfLife.java:62: warning - @post is an unknown tag.
+/Users/shahsboyz/Desktop/GameOfLifeLab/GameOfLife.java:143: warning - @pre is an unknown tag.
+/Users/shahsboyz/Desktop/GameOfLifeLab/GameOfLife.java:143: warning - @post is an unknown tag.
+/Users/shahsboyz/Desktop/GameOfLifeLab/GameOfLife.java:224: warning - @pre is an unknown tag.
+Generating /Users/shahsboyz/Desktop/GameOfLifeLab/doc/package-frame.html...
+Generating /Users/shahsboyz/Desktop/GameOfLifeLab/doc/package-summary.html...
+Generating /Users/shahsboyz/Desktop/GameOfLifeLab/doc/constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating /Users/shahsboyz/Desktop/GameOfLifeLab/doc/allclasses-frame.html...
+Generating /Users/shahsboyz/Desktop/GameOfLifeLab/doc/allclasses-noframe.html...
+Generating /Users/shahsboyz/Desktop/GameOfLifeLab/doc/index.html...
+Generating /Users/shahsboyz/Desktop/GameOfLifeLab/doc/stylesheet.css...
+5 warnings
