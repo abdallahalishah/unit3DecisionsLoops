@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import info.gridworld.actor.Actor;
+import java.util.ArrayList;
+import info.gridworld.grid.Location;
 
 /**
  * The test class GameOfLifeTest.
@@ -41,7 +43,7 @@ public class GameOfLifeTest
     }
 
     @Test
-    public void testInitialState()
+    public void testInitialState() throws InterruptedException
     {
         /* expected pattern for initial state
          *  (X: alive; -: dead)
@@ -58,9 +60,9 @@ public class GameOfLifeTest
          *  8 - - - - - - - - - - 
          *  9 - - - - - - - - - - 
          */
+
         
-        
-        GameOfLife game = new GameOfLife();
+        GameOfLife game = new GameOfLife(0);
         final int ROWS = game.getNumRows();
         final int COLS = game.getNumCols();
 
@@ -73,11 +75,11 @@ public class GameOfLifeTest
 
                 // if the cell at the current row and col should be alive, assert that the actor is not null
                 if(     (row == 1 && col == 1) ||
-                        (row == 1 && col == 2) ||
-                        (row == 1 && col == 3) ||
-                        (row == 1 && col == 4) ||
-                        (row == 2 && col == 0) ||
-                        (row == 2 && col == 5))
+                (row == 1 && col == 2) ||
+                (row == 1 && col == 3) ||
+                (row == 1 && col == 4) ||
+                (row == 2 && col == 0) ||
+                (row == 2 && col == 5))
                 {
                     assertNotNull("expected alive cell at (" + row + ", " + col + ")", cell);
                 }
@@ -87,14 +89,15 @@ public class GameOfLifeTest
                 }
             }
         }
+
     }
 
     @Test
     public void testFinalState()
     {
-        /* verify that the actual pattern matches the expected pattern after 3 generations         *  
+        /* verify that the actual pattern matches the expected pattern after 2 generations         *  
          */
-        
+
         /* expected pattern for final state
          *  (X: alive; -: dead)
          * 
@@ -110,11 +113,22 @@ public class GameOfLifeTest
          *  8 - - - - - - - - - - 
          *  9 - - - - - - - - - - 
          */
-        
-        GameOfLife game = new GameOfLife();
+
+        GameOfLife game = new GameOfLife(0);
         final int ROWS = game.getNumRows();
         final int COLS = game.getNumCols();
-
+        
+        // Runs 2 generations of the game to be ready for checking
+        for (int i = 0; i < 2; i++)
+        {
+            game.createNextGeneration();
+            try {
+                Thread.sleep(100);                 
+            } catch(InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        
         for(int row = 0; row < ROWS; row++)
         {
             for(int col = 0; col < COLS; col++)
@@ -124,11 +138,11 @@ public class GameOfLifeTest
 
                 // if the cell at the current row and col should be alive, assert that the actor is not null
                 if(     (row == 0 && col == 1) ||
-                        (row == 0 && col == 4) ||
-                        (row == 2 && col == 1) ||
-                        (row == 2 && col == 4) ||
-                        (row == 3 && col == 2) ||
-                        (row == 3 && col == 3))
+                (row == 0 && col == 4) ||
+                (row == 2 && col == 1) ||
+                (row == 2 && col == 4) ||
+                (row == 3 && col == 2) ||
+                (row == 3 && col == 3))
                 {
                     assertNotNull("expected alive cell at (" + row + ", " + col + ")", cell);
                 }
@@ -138,12 +152,7 @@ public class GameOfLifeTest
                 }
             }
         }
-        
-        
-        
-        
-        
-        // ...
+
     }
 }
 
